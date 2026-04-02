@@ -1,10 +1,17 @@
 import { useState, useEffect } from 'react';
-import { FiMenu, FiX } from 'react-icons/fi';
+import { FiMenu, FiX, FiSun, FiMoon } from 'react-icons/fi';
 import './Navbar.css';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [theme, setTheme] = useState(() => {
+    // Check localStorage first, then system preference, default to dark
+    const saved = localStorage.getItem('theme');
+    if (saved) return saved;
+    if (window.matchMedia('(prefers-color-scheme: light)').matches) return 'light';
+    return 'dark';
+  });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,6 +20,16 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    // Apply theme to document
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(prev => prev === 'dark' ? 'light' : 'dark');
+  };
 
   const navLinks = [
     { name: 'About', href: '#about' },
@@ -41,14 +58,22 @@ const Navbar = () => {
               {link.name}
             </a>
           ))}
+          <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
+            {theme === 'dark' ? <FiSun size={18} /> : <FiMoon size={18} />}
+          </button>
           <a href="/JayaSriharshitaKoneti.pdf" target="_blank" className="btn btn-primary nav-btn">
             Resume
           </a>
         </div>
 
-        <button className="navbar-toggle" onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
-        </button>
+        <div className="navbar-actions">
+          <button className="theme-toggle mobile-theme" onClick={toggleTheme} aria-label="Toggle theme">
+            {theme === 'dark' ? <FiSun size={18} /> : <FiMoon size={18} />}
+          </button>
+          <button className="navbar-toggle" onClick={() => setIsOpen(!isOpen)}>
+            {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+          </button>
+        </div>
       </div>
     </nav>
   );
