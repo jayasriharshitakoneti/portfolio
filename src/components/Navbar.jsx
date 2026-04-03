@@ -61,7 +61,7 @@ const Navbar = () => {
           <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
             {theme === 'dark' ? <FiSun size={18} /> : <FiMoon size={18} />}
           </button>
-          <a href="/JayaSriharshitaKoneti.pdf" target="_blank" className="btn btn-primary nav-btn">
+          <a href="/JayaSriharshitaKoneti.docx" target="_blank" className="btn btn-primary nav-btn">
             Resume
           </a>
         </div>

@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import {
-  FiCode, FiServer, FiLayout, FiCloud, FiDatabase, FiCpu
+  FiCode, FiServer, FiLayout, FiCloud, FiDatabase, FiCpu, FiCheckCircle, FiZap
 } from 'react-icons/fi';
 import { skills } from '../data/portfolioData';
 import './Skills.css';
@@ -12,7 +12,9 @@ const Skills = () => {
     "Frontend": { icon: <FiLayout />, color: '#34d399' },
     "Cloud & DevOps": { icon: <FiCloud />, color: '#14b8a6' },
     "Databases": { icon: <FiDatabase />, color: '#047857' },
-    "AI/ML": { icon: <FiCpu />, color: '#6ee7b7' }
+    "Testing & Performance": { icon: <FiCheckCircle />, color: '#0d9488' },
+    "AI/ML Tools": { icon: <FiCpu />, color: '#6ee7b7' },
+    "AI Practices": { icon: <FiZap />, color: '#a7f3d0' }
   };
 
   const containerVariants = {
