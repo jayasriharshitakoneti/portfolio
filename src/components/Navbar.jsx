@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link, NavLink, useNavigate, useLocation } from 'react-router-dom';
 import { FiMenu, FiX, FiSun, FiMoon } from 'react-icons/fi';
 import './Navbar.css';
 
@@ -12,6 +13,9 @@ const Navbar = () => {
     if (window.matchMedia('(prefers-color-scheme: light)').matches) return 'light';
     return 'dark';
   });
+
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,33 +35,63 @@ const Navbar = () => {
     setTheme(prev => prev === 'dark' ? 'light' : 'dark');
   };
 
-  const navLinks = [
-    { name: 'About', href: '#about' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Experience', href: '#experience' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Publications', href: '#publications' },
-    { name: 'Contact', href: '#contact' }
+  // Section links scroll to in-page anchors. When already on the home route
+  // we smooth-scroll directly; from another route we go home first and let
+  // Home's effect perform the scroll via navigation state.
+  const sectionLinks = [
+    { name: 'About', id: 'about' },
+    { name: 'Skills', id: 'skills' },
+    { name: 'Experience', id: 'experience' },
+    { name: 'Projects', id: 'projects' },
+    { name: 'Publications', id: 'publications' },
+    { name: 'Contact', id: 'contact' }
   ];
+
+  const handleSectionClick = (e, id) => {
+    e.preventDefault();
+    setIsOpen(false);
+    if (location.pathname === '/') {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      navigate('/', { state: { scrollTo: id } });
+    }
+  };
+
+  const handleLogoClick = () => {
+    setIsOpen(false);
+    if (location.pathname === '/') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      navigate('/');
+    }
+  };
 
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="navbar-container">
-        <a href="#" className="navbar-logo">
+        <Link to="/" className="navbar-logo" onClick={handleLogoClick}>
           Harshita<span className="logo-accent">.</span>
-        </a>
+        </Link>
 
         <div className={`navbar-links ${isOpen ? 'active' : ''}`}>
-          {navLinks.map((link) => (
+          {sectionLinks.map((link) => (
             <a
               key={link.name}
-              href={link.href}
+              href={`#${link.id}`}
               className="nav-link"
-              onClick={() => setIsOpen(false)}
+              onClick={(e) => handleSectionClick(e, link.id)}
             >
               {link.name}
             </a>
           ))}
+          <NavLink
+            to="/blog"
+            className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}
+            onClick={() => setIsOpen(false)}
+          >
+            Blog
+          </NavLink>
           <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
             {theme === 'dark' ? <FiSun size={18} /> : <FiMoon size={18} />}
           </button>

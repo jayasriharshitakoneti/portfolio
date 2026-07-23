@@ -184,3 +184,68 @@ export const education = {
     "Natural Language Processing"
   ]
 };
+
+export const blogPosts = [
+  {
+    slug: "csharp-vs-java-springboot",
+    title: "C# / .NET vs Java / Spring Boot — A Side-by-Side",
+    date: "July 2026",
+    readTime: "3 min read",
+    category: "Engineering",
+    likes: 24,
+    image: "/blog/day1.webp",
+    imageAlt: "C# .NET vs Java Spring: an enterprise ecosystem comparison (infographic)",
+    excerpt: "Years into Java/Spring Boot, I started learning C#/.NET. I assumed it’d just be Java with different syntax. It’s not — and that’s the fun part.",
+    tags: ["csharp", "dotnet", "java", "springboot", "softwareengineering"],
+    intro: [
+      "Dips into learning C#/.NET. Years into Java/Spring Boot. I assumed it’d just be Java with different syntax.",
+      "It’s not — and that’s the fun part. A few things I’ve noticed, side by side:"
+    ],
+    points: [
+      {
+        title: "Streams vs LINQ",
+        body: "Java Streams are explicit and composable, built step by step. LINQ reads like SQL. Same job, two clean ways to think about data."
+      },
+      {
+        title: "Day-to-day ergonomics",
+        body: "LINQ also just feels lightweight — day-to-day filtering, sorting, grouping read like one clean sentence instead of a day of operations."
+      },
+      {
+        title: "Properties",
+        body: "C# properties ({ get; set; }) fold getters/setters into one line. Java’s explicitness has its own place, but writing a class in C# feels noticeably lighter."
+      },
+      {
+        title: "Global usings",
+        body: "Global usings mean I write “using System;” once for the whole project instead of repeating imports in every file. Small thing, but it adds up."
+      }
+    ],
+    closing: "Neither stack is “better.” They’re solving the same engineering problems with different philosophies — and having strong roots in one makes the other click faster, not slower. Still early. Plenty more to learn before it clicks fully.",
+    question: "If you’ve worked across both — what’s your favorite from each?",
+    comparison: {
+      dotnet: {
+        name: ".NET (C#)",
+        features: [
+          { icon: "FiGrid", text: "Microsoft Ecosystem" },
+          { icon: "FiCloud", text: "Azure Integration" },
+          { icon: "FiCode", text: "Visual Studio" },
+          { icon: "FiBriefcase", text: "Strong Enterprise Support" },
+          { icon: "FiZap", text: "High Performance" },
+          { icon: "FiGlobe", text: "Cross-Platform (NET 8+)" },
+          { icon: "FiCloudRain", text: "Web & Cloud (ASP.NET Core)" }
+        ]
+      },
+      spring: {
+        name: "Java Spring",
+        features: [
+          { icon: "FiUsers", text: "Vibrant Open Community" },
+          { icon: "FiCpu", text: "Platform Independence (JVM)" },
+          { icon: "FiServer", text: "Spring Boot & Microservices" },
+          { icon: "FiLayers", text: "Modular Framework" },
+          { icon: "FiPackage", text: "Rich Library Support" },
+          { icon: "FiBox", text: "Vendor Neutrality" },
+          { icon: "FiTrendingUp", text: "Cloud-Native Ready" }
+        ]
+      }
+    }
+  }
+];

@@ -1,29 +1,25 @@
+import { Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import Skills from './components/Skills';
-import Experience from './components/Experience';
-import Projects from './components/Projects';
-import Publications from './components/Publications';
-import Certifications from './components/Certifications';
-import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Home from './components/Home';
+import Blog from './components/Blog';
+import BlogPost from './components/BlogPost';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
     <div className="app">
       <Navbar />
       <main>
-        <Hero />
-        <About />
-        <Skills />
-        <Experience />
-        <Projects />
-        <Publications />
-        <Certifications />
-        <Contact />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
       </main>
       <Footer />
+      <ScrollToTop />
     </div>
   );
 }

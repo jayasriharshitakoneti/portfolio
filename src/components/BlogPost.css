@@ -1,0 +1,233 @@
+.blog-post {
+  padding: 8rem 0 5rem;
+  min-height: 100vh;
+}
+
+.blog-post-container {
+  max-width: 760px;
+}
+
+/* Back link */
+.blog-post-back {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  transition: color 0.2s ease;
+}
+
+.blog-post-back:hover {
+  color: var(--accent-primary);
+}
+
+.blog-post-back.bottom {
+  margin-top: 2.5rem;
+  margin-bottom: 0;
+}
+
+.blog-category {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accent-primary);
+  margin-bottom: 0.75rem;
+}
+
+.blog-post-title {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.blog-post-meta {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+}
+
+.blog-post-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.blog-post .blog-tags {
+  margin-bottom: 2.5rem;
+}
+
+/* Hero image */
+.blog-post-image {
+  width: 100%;
+  display: block;
+  border-radius: 14px;
+  border: 1px solid var(--border-color);
+  margin-bottom: 2.5rem;
+}
+
+/* Body */
+.blog-post-body {
+  font-family: var(--font-body);
+}
+
+.blog-post-para {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: 1.25rem;
+}
+
+.blog-post-points {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin: 2rem 0;
+}
+
+.blog-post-points li {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.blog-post-points li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent-primary);
+}
+
+.point-label {
+  display: block;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  margin-bottom: 0.15rem;
+}
+
+.point-body {
+  display: block;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+}
+
+/* Pull quote + callout */
+.blog-post-quote {
+  margin: 2.5rem 0;
+  padding: 0.5rem 0 0.5rem 1.5rem;
+  border-left: 3px solid var(--accent-primary);
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.6;
+  color: var(--text-primary);
+}
+
+.blog-post-callout {
+  margin-top: 2rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--accent-bg);
+  border: 1px solid var(--accent-border);
+  border-radius: 12px;
+}
+
+.callout-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accent-primary);
+  margin-bottom: 0.4rem;
+}
+
+.blog-post-callout p {
+  font-size: 1rem;
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+/* Like / upvote */
+.blog-post-actions {
+  margin-top: 2.25rem;
+  display: flex;
+  align-items: center;
+}
+
+.like-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.15rem;
+  border-radius: 999px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+}
+
+.like-button:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+}
+
+.like-button.liked {
+  background: var(--accent-bg);
+  border-color: var(--accent-border);
+  color: var(--accent-primary);
+}
+
+.like-button.liked svg {
+  fill: var(--accent-primary);
+}
+
+.like-count {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+
+.like-label {
+  font-size: 0.85rem;
+}
+
+@media (max-width: 640px) {
+  .blog-post {
+    padding: 7rem 0 4rem;
+  }
+
+  .blog-post-title {
+    font-size: 1.9rem;
+  }
+
+  .blog-post-quote {
+    font-size: 1.05rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .like-label {
+    display: none;
+  }
+}
