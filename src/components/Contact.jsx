@@ -27,8 +27,9 @@ const Contact = () => {
               Let's Work <span className="gradient-text">Together</span>
             </h2>
             <p className="contact-description">
-              I'm currently looking for new opportunities. Whether you have a question
-              or just want to say hi, feel free to reach out!
+              I've completed my MS at Northeastern and I'm actively seeking full-time
+              Software Engineer and AI/ML roles — available to start immediately.
+              Whether you have a question or just want to say hi, feel free to reach out!
             </p>
           </div>
 

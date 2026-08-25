@@ -7,11 +7,11 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [theme, setTheme] = useState(() => {
-    // Check localStorage first, then system preference, default to dark
+    // Check localStorage first, then system preference, default to light
     const saved = localStorage.getItem('theme');
     if (saved) return saved;
-    if (window.matchMedia('(prefers-color-scheme: light)').matches) return 'light';
-    return 'dark';
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) return 'dark';
+    return 'light';
   });
 
   const navigate = useNavigate();

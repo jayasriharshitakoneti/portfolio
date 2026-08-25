@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { FiGithub, FiLinkedin, FiArrowRight, FiDownload, FiMapPin } from 'react-icons/fi';
-import { personalInfo, about } from '../data/portfolioData';
+import { FiGithub, FiLinkedin, FiArrowRight, FiDownload, FiMapPin, FiGlobe } from 'react-icons/fi';
+import { personalInfo } from '../data/portfolioData';
 import './Hero.css';
 
 const Hero = () => {
@@ -9,7 +9,7 @@ const Hero = () => {
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
 
-  const roles = ['Software Engineer', 'Full Stack Developer', 'AI Enthusiast', 'Startup Founder'];
+  const roles = ['Software Engineer', 'Full-Stack Developer', 'AI/ML Engineer', 'Startup Founder'];
 
   useEffect(() => {
     const currentRole = roles[currentRoleIndex];
@@ -59,7 +59,7 @@ const Hero = () => {
           <motion.div className="bento-card main-card" variants={item}>
             <span className="status-badge">
               <span className="status-dot"></span>
-              Available for work
+              Available now · Seeking SWE &amp; AI/ML roles
             </span>
             <h1 className="hero-name">
               {personalInfo.name.split(' ').slice(0, 2).join(' ')}
@@ -88,18 +88,6 @@ const Hero = () => {
             </div>
           </motion.div>
 
-          {/* Stats cards */}
-          {about.highlights.map((stat, index) => (
-            <motion.div
-              key={index}
-              className="bento-card stat-card"
-              variants={item}
-            >
-              <span className="stat-value">{stat.value}</span>
-              <span className="stat-label">{stat.label}</span>
-            </motion.div>
-          ))}
-
           {/* Tech stack card */}
           <motion.div className="bento-card tech-card" variants={item}>
             <span className="card-label">Tech Stack</span>
@@ -123,6 +111,11 @@ const Hero = () => {
               <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer">
                 <FiLinkedin /> LinkedIn
               </a>
+              {personalInfo.website && (
+                <a href={personalInfo.website} target="_blank" rel="noopener noreferrer">
+                  <FiGlobe /> Website
+                </a>
+              )}
             </div>
           </motion.div>
         </motion.div>

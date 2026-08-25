@@ -48,7 +48,7 @@
 }
 
 .experience-card:hover {
-  border-color: rgba(255, 255, 255, 0.12);
+  border-color: var(--accent-border);
 }
 
 .experience-header {
@@ -117,6 +117,11 @@
   color: var(--accent-primary);
   flex-shrink: 0;
   margin-top: 0.25rem;
+}
+
+.experience-highlights strong {
+  color: var(--text-primary);
+  font-weight: 600;
 }
 
 @media (max-width: 768px) {

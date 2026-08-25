@@ -2,8 +2,9 @@ export const personalInfo = {
   name: "Jaya Sriharshita Koneti",
   shortName: "Harshita",
   title: "Software Engineer",
-  tagline: "Building scalable applications with AI-powered solutions",
-  location: "Boston, MA",
+  tagline: "Building enterprise-scale systems and AI-powered applications",
+  location: "Boston, MA · Open to Relocation",
+  website: "https://www.koneti.in",
   linkedin: "https://www.linkedin.com/in/jaya-sriharshita-koneti/",
   github: "https://github.com/jayasriharshitakoneti",
   resume: "/JayaSriharshitaKoneti.docx",
@@ -12,7 +13,7 @@ export const personalInfo = {
 
 export const about = {
   description: [
-    "Software Engineer pursuing my Master's in Computer Science at Northeastern University, specializing in scalable, AI-powered applications.",
+    "Software Engineer with an MS in Computer Science from Northeastern University, specializing in scalable, AI-powered applications.",
     "3+ years of experience at major fintech companies including JPMorgan Chase and Fidelity Investments, with expertise in full-stack development, cloud architecture, and AI/ML integration.",
     "Founder of SiliconAgent.ai, an AI platform for modernizing legacy enterprise systems with zero downtime."
   ],
@@ -25,30 +26,30 @@ export const about = {
 };
 
 export const skills = {
-  "Programming Languages": ["Java", "Python", "JavaScript", "Dart", "TypeScript", "C", "C#"],
-  "Backend": ["Spring Boot", "Node.js", "Express.js", "Next.js", "Kafka", "Flask", "REST", "gRPC", "FastAPI", "JWT", "OAuth"],
+  "Programming Languages": ["Python", "Java", "JavaScript", "TypeScript"],
+  "Backend": ["Spring Boot", "Node.js", "Next.js", "Express.js", "FastAPI", "Flask", ".NET", "REST", "gRPC", "Kafka", "JWT", "OAuth"],
   "Frontend": ["React", "Angular", "Flutter", "MaterialUI", "Tailwind", "Android", "HTML"],
-  "Cloud & DevOps": ["AWS", "GCP", "Linux", "Docker", "Podman", "Kubernetes", "Terraform", "Git", "Jenkins"],
-  "Databases": ["MySQL", "Oracle", "PostgreSQL", "SQLite", "MongoDB", "MSSQL", "Snowflake", "Neo4j", "Redis"],
-  "Testing & Performance": ["Jest", "Mockito", "JUnit", "JMeter", "Grafana", "Dynatrace", "Splunk", "ELK Stack"],
-  "AI/ML Tools": ["Groq", "Gemini", "Ollama", "Hugging Face", "LangChain4j", "GraphRAG", "n8n"],
-  "AI Practices": ["Prompt Engineering", "MCP", "A2A Protocols", "Copilot", "Claude Code"]
+  "Cloud & DevOps": ["AWS", "Azure", "GCP", "Docker", "Kubernetes", "Terraform", "Jenkins", "Linux", "Podman", "Git"],
+  "Databases": ["Snowflake", "Neo4j", "PostgreSQL", "Oracle", "MSSQL", "MongoDB", "MySQL", "SQLite", "Redis", "Pinecone", "FAISS"],
+  "Testing & Performance": ["Jest", "Playwright", "Mockito", "JUnit", "JMeter", "Grafana", "Dynatrace", "Splunk", "ELK Stack"],
+  "AI/ML Tools": ["OpenAI", "Bedrock", "Groq", "Gemini", "LangChain", "LangChain4j", "GraphRAG", "RAG", "Hugging Face", "Ollama", "Pandas", "NumPy", "n8n"],
+  "AI Practices": ["Prompt Engineering", "Multi-Agent Orchestration", "MCP", "A2A Protocols", "Copilot", "Claude Code"]
 };
 
 export const experience = [
   {
     company: "Fidelity Investments",
-    role: "Software Data Engineer",
+    role: "Software Engineer",
     location: "Boston, MA",
     period: "Jul 2025 – Dec 2025",
     highlights: [
-      "Built a Prompt Optimizer POC using Python and OpenAI APIs to refine prompts, recommend optimal LLMs per use case, reduce token usage, and improve Copilot output quality",
-      "Generated multi-region synthetic PII datasets using OpenAI to validate third-party data masking APIs",
-      "Automated Snowflake boilerplate generation utility for install and uninstall files, streamlining developer workflows",
-      "Enforced organization-specific AI guardrails as part of GitHub Copilot Champions project",
-      "Prepared, tuned, and indexed 1M+ Asset Management records using Neo4j and Snowflake for a GraphRAG-based GenAI tool",
-      "Identified label inconsistencies across 20 datasets, reducing false anomaly reporting by 72%",
-      "Built and maintained 11 web scrapers using Python ingesting 60+ GB/month across Google Reviews, Trends, ESG, and other datasets for audit and investment analytics"
+      "Built and deployed a GraphRAG pipeline (Neo4j, Snowflake, OpenAI) with vector embeddings and semantic retrieval across 1M+ Asset Management records, enabling relationship-aware investment analytics",
+      "Built a Prompt Optimizer using Python and OpenAI APIs, applying 5 prompt engineering techniques across 6 LLMs to cut prompt iteration and token waste, generating structured JSON variants with ~5s latency",
+      "Generated 50K+ multi-region synthetic PII datasets via LLM-based augmentation to stress-test data masking APIs, ensuring financial privacy compliance",
+      "Established AI governance practices (auditing, responsible-AI standards), reaching ~99% approved-stack compliance",
+      "Applied data cleaning and feature engineering across 20 financial datasets, reducing false anomaly reporting by 72%",
+      "Automated Snowflake DDL boilerplate generation, saving ~10 hrs/week of developer time",
+      "Engineered 11 production web scrapers (Python, Playwright, Selenium) ingesting 60+ GB/month of Google Reviews, Trends, and ESG data for audit and investment analytics"
     ]
   },
   {
@@ -57,15 +58,15 @@ export const experience = [
     location: "Hyderabad, India",
     period: "Jan 2022 – Aug 2024",
     highlights: [
-      "Brought in $60K/year savings by decommissioning OS instances and migrating workflows to AWS cloud infrastructure",
-      "Automated 20+ customer service call lines using Elastic Stack (ELK) and AI, saving over 600 business hours with feedback",
-      "Developed automated loan report generation system using Spring Boot (Java), serving multiple business flows under Archival services",
-      "Solely led design and development of CodeBoosters UI using React, adopted by 20,000+ users for developer productivity",
-      "Remediated 100+ critical security vulnerabilities including SQL injections and Cross-Site Scripting across all environments",
-      "Managed end-to-end data migration, database purging using Oracle, and production deployments across multiple business flows",
-      "Reduced printing costs by 21% across FAShip project by implementing IP and socket-based printing solutions using Java and C#",
-      "Mentored 7 interns on Java, Spring Boot, internal tools, and dev workflows, accelerating their onboarding and project delivery",
-      "Built an internal portal vulnerability scanning tool using Python, awarded runners-up in firm-wide innovation competition"
+      "Architected migration of on-prem MSSQL databases to AWS, designing the system architecture and data migration strategy, saving $60K/year in infrastructure cost",
+      "Designed Oracle DB partitioning with a 90-day sliding window on active data synced to a historical archive, reducing loan report generation from 25+ mins to under 1 min across 2B+ records",
+      "Automated 20+ customer service call lines using Elastic Stack (ELK) and AI, saving 600+ business hours annually through intelligent routing and NLP-driven feedback analysis",
+      "Led end-to-end design and launch of CodeBoosters (React), a developer productivity platform adopted by 20,000+ users",
+      "Developed an automated loan report generation system (Spring Boot) serving 20+ business flows under Archival Services, cutting manual reporting effort by 40%",
+      "Engineered IP and socket-based printing infrastructure for the FAShip archiving system, enabling location-independent printing of 1M+ pages/year across teams",
+      "Built an internal portal vulnerability scanning tool (Python), recognized runners-up in a firm-wide innovation competition",
+      "Remediated 100+ critical security vulnerabilities (SQL injection, XSS) across all environments, improving audit readiness and regulatory compliance",
+      "Mentored 7 interns on Java, Spring, and financial technology workflows, accelerating onboarding and project delivery"
     ]
   },
   {
@@ -82,38 +83,70 @@ export const experience = [
 export const projects = [
   {
     title: "SiliconAgent.ai",
-    description: "Founded an AI-powered platform enabling seamless modernization of legacy enterprise systems with zero downtime through automated code transformation and semantic analysis. Designing transformation pipelines for Java upgrades, framework migrations, and UI/API modernization using LLMs.",
-    tech: ["React", "Vite", "Python", "LLMs", "AI"],
-    period: "May 2025 – Present",
+    description: "Founded an AI-powered platform for legacy enterprise system modernization — Java upgrades, framework migrations (Struts→Spring Boot, JSP→React), API transformation, and database migration. Designed a 6-stage pipeline alternating Language Server Protocol (LSP) analysis with multi-model AI orchestration (Claude, GPT-4o, Gemini, Llama) for compiler-level validation, directly targeting the hallucinated APIs and broken type contracts that plague pure AI-only migration. Up to 60% cost reduction versus manual, with zero-downtime deployment and automated rollback.",
+    tech: ["Python", "LLMs", "LSP", "Multi-Agent", "AI"],
+    period: "Jan 2025 – Mar 2026",
     github: null,
     live: "https://siliconagent.ai",
     featured: true
   },
   {
-    title: "AI Prompt Optimizer",
-    description: "Developed a web application using Python, Flask, and Groq's LLM API to convert vague prompts into optimized versions and recommend the best suited model for each task. Implemented prompt engineering techniques like Chain-of-Thought with JSON, YAML, and MD output support.",
-    tech: ["Python", "Flask", "Groq API", "LLM"],
-    period: "Dec 2025",
-    github: "https://github.com/jayasriharshitakoneti/Prompt-Optimizer",
+    title: "FinRAG",
+    description: "A retrieval-augmented QA system for financial documents built on the FinQA dataset (86K+ chunks across 10K+ filing pages). Combines BM25 keyword search with dense vector retrieval, with a fusion-weight dev sweep that improved Recall@3 from 70.3% (BM25 only) to 74.7% (hybrid). Extending into prompt-based generation and hallucination detection using an LLM-as-a-judge approach that flags unsupported claims in generated answers.",
+    tech: ["Python", "RAG", "Groq", "Weaviate", "LLM-as-a-Judge"],
+    period: "Jul 2026 – Present",
+    github: null,
     live: null
   },
   {
-    title: "PantryFlow",
-    description: "Developed a voice-enabled Flutter diet assistant using Groq API and Claude Sonnet to generate personalized meal plans from available pantry ingredients. Integrated speech recognition and NLP for voice and text input, enabling low-latency conversational interaction.",
-    tech: ["Flutter", "Groq API", "Claude Sonnet", "NLP"],
-    period: "Aug 2025 – Nov 2025",
-    github: "https://github.com/jayasriharshitakoneti/DietAppFlutter",
+    title: "MIRA",
+    description: "An AI mock interview platform where users upload a resume and job description, then practice through real-time voice interviews with AI-generated questions and follow-ups, and receive structured performance feedback. Calls route through a custom Gemini/Groq multi-model gateway with retry, token management, and latency/cost logging. Built on Next.js 15 + Supabase (row-level security on every table, encrypted API keys) with a 9-state session orchestration flow and an 11-stage CI/CD pipeline.",
+    tech: ["Next.js", "Supabase", "PostgreSQL", "Gemini", "Groq"],
+    period: "Jan 2026 – Apr 2026",
+    github: null,
+    live: "https://miraprep.vercel.app"
+  },
+  {
+    title: "Codie",
+    description: "An open-source Claude Code plugin that teaches data structures and algorithms through Socratic coaching — guiding users toward solutions with targeted questions instead of giving answers away. Integrates directly into a developer's Claude Code workflow, turning everyday coding practice into structured learning. Adopted by 100+ users.",
+    tech: ["Prompt Engineering", "Claude Code", "Algorithms", "TypeScript"],
+    period: "Jun 2026",
+    github: "https://github.com/jayasriharshitakoneti/codie-plugin",
+    live: null
+  },
+  {
+    title: "PackRight",
+    description: "A collaborative trip-packing app combining AI-generated packing suggestions (Groq's Llama 3.1 70B) with a real-time kanban board for group travel. Teams claim and track items together via Supabase Realtime, with partial-quantity claiming and a fair auto-assignment algorithm for unclaimed items. 92%+ statement coverage with Jest unit/integration and Playwright E2E tests.",
+    tech: ["Next.js", "TypeScript", "Supabase", "Groq"],
+    period: "Mar 2026",
+    github: "https://github.com/likhithreddy/packright",
+    live: null
+  },
+  {
+    title: "Stockfolio",
+    description: "A stock portfolio management app applying core database concepts with simulated market data. Uses MySQL stored procedures and triggers to handle portfolio-update logic and data consistency at the database layer rather than purely in application code. Java Spring Boot backend with a React (Vite) frontend.",
+    tech: ["Java", "Spring Boot", "MySQL", "React"],
+    period: "Mar 2025 – Apr 2025",
+    github: "https://github.com/jayasriharshitakoneti/stockportfolio-frontend",
     live: null
   },
   {
     title: "Jeena",
-    description: "A low-code web application generation tool developed using Spring, React.js, and MySQL that generates deployment-ready code for UI screens, backend, and database based on user inputs. Helps users bootstrap web application creation by reducing efforts by approximately 60%.",
-    tech: ["Spring", "React", "MySQL"],
-    period: "Jun 2022 – Dec 2024",
+    description: "A low-code platform that generates ready-to-deploy frontend, backend, and database code from user choices, reducing application-creation effort by approximately 60%. Built with Spring Boot, React, and MySQL.",
+    tech: ["Spring Boot", "React", "MySQL", "Full-Stack"],
+    period: "Jul 2022 – Jun 2025",
     github: "https://github.com/jayasriharshitakoneti/jeena-ui",
     githubBackend: "https://github.com/jayasriharshitakoneti/jeena-backend",
     live: null,
     hasResearch: true
+  },
+  {
+    title: "Face Mask Detection",
+    description: "A real-time face mask detection system using OpenCV and a MobileNet-based classifier, optimized for lightweight, low-latency inference on live video streams — an early hands-on application of ML in a production-style real-time setting rather than a static notebook.",
+    tech: ["Python", "OpenCV", "MobileNet", "Machine Learning"],
+    period: "Jan 2022",
+    github: "https://github.com/jayasriharshitakoneti/FaceMaskDetection",
+    live: null
   }
 ];
 
@@ -172,7 +205,7 @@ export const education = {
   university: "Northeastern University",
   location: "Boston, MA",
   graduation: "Aug 2026",
-  gpa: "3.7/4",
+  gpa: "3.83/4",
   achievements: ["Graduate Leadership Institute Certification (Fall 2024)"],
   coursework: [
     "Algorithms",

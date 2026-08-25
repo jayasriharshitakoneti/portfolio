@@ -27,7 +27,7 @@
 }
 
 .skill-category:hover {
-  border-color: rgba(255, 255, 255, 0.12);
+  border-color: var(--accent-border);
 }
 
 .category-header {

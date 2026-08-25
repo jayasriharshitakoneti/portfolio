@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FiGithub, FiLinkedin, FiMail, FiHeart, FiArrowUp } from 'react-icons/fi';
+import { FiGithub, FiLinkedin, FiGlobe, FiHeart, FiArrowUp } from 'react-icons/fi';
 import { personalInfo } from '../data/portfolioData';
 import './Footer.css';
 
@@ -52,13 +52,17 @@ const Footer = () => {
             >
               <FiLinkedin size={18} />
             </motion.a>
-            <motion.a
-              href={`mailto:${personalInfo.email}`}
-              whileHover={{ y: -5, scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              <FiMail size={18} />
-            </motion.a>
+            {personalInfo.website && (
+              <motion.a
+                href={personalInfo.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ y: -5, scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <FiGlobe size={18} />
+              </motion.a>
+            )}
           </motion.div>
         </div>
 

@@ -90,7 +90,7 @@ const About = () => {
                     </span>
                     <span className="detail-badge">
                       <FiZap size={12} />
-                      Expected: {education.graduation}
+                      Graduated: {education.graduation}
                     </span>
                   </div>
                 </div>

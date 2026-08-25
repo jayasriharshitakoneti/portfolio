@@ -39,7 +39,7 @@
 }
 
 .education-card:hover {
-  border-color: rgba(255, 255, 255, 0.12);
+  border-color: var(--accent-border);
 }
 
 .education-content {
@@ -115,7 +115,7 @@
 }
 
 .stat-card:hover {
-  border-color: rgba(255, 255, 255, 0.12);
+  border-color: var(--accent-border);
 }
 
 .stat-icon {

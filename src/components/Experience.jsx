@@ -3,6 +3,14 @@ import { FiBriefcase, FiMapPin, FiCalendar, FiChevronRight } from 'react-icons/f
 import { experience } from '../data/portfolioData';
 import './Experience.css';
 
+// Wraps metrics ($60K, 72%, 1M+, 2B+) in <strong> so recruiters can skim outcomes.
+const emphasize = (text) =>
+  text.split(/(\$?\d[\d.,]*(?:[KMB])?\+?%?)/g).map((part, i) =>
+    /^\$?\d[\d.,]*[KMB]?\+?%?$/.test(part) && /\d/.test(part)
+      ? <strong key={i}>{part}</strong>
+      : part
+  );
+
 const Experience = () => {
   return (
     <section className="experience" id="experience">
@@ -88,7 +96,7 @@ const Experience = () => {
                         transition={{ delay: index * 0.2 + hIndex * 0.1 }}
                       >
                         <FiChevronRight className="highlight-icon" />
-                        <span>{highlight}</span>
+                        <span>{emphasize(highlight)}</span>
                       </motion.li>
                     ))}
                   </ul>
