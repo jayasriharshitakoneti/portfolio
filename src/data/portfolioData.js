@@ -26,10 +26,10 @@ export const about = {
 };
 
 export const skills = {
-  "Programming Languages": ["Python", "Java", "JavaScript", "TypeScript"],
-  "Backend": ["Spring Boot", "Node.js", "Next.js", "Express.js", "FastAPI", "Flask", ".NET", "REST", "gRPC", "Kafka", "JWT", "OAuth"],
+  "Programming Languages": ["Python", "Java", "JavaScript", "TypeScript", "C#"],
+  "Backend": ["Spring Boot", "Node.js", "Next.js", "FastAPI", "Flask", ".NET", "REST", "gRPC", "Kafka", "JWT", "OAuth"],
   "Frontend": ["React", "Angular", "Flutter", "MaterialUI", "Tailwind", "Android", "HTML"],
-  "Cloud & DevOps": ["AWS", "Azure", "GCP", "Docker", "Kubernetes", "Terraform", "Jenkins", "Linux", "Podman", "Git"],
+  "Cloud & DevOps": ["AWS", "Azure", "GCP", "Docker", "Kubernetes", "Terraform", "Jenkins", "GitHub Actions", "Linux", "Podman", "Git"],
   "Databases": ["Snowflake", "Neo4j", "PostgreSQL", "Oracle", "MSSQL", "MongoDB", "MySQL", "SQLite", "Redis", "Pinecone", "FAISS"],
   "Testing & Performance": ["Jest", "Playwright", "Mockito", "JUnit", "JMeter", "Grafana", "Dynatrace", "Splunk", "ELK Stack"],
   "AI/ML Tools": ["OpenAI", "Bedrock", "Groq", "Gemini", "LangChain", "LangChain4j", "GraphRAG", "RAG", "Hugging Face", "Ollama", "Pandas", "NumPy", "n8n"],
@@ -85,22 +85,22 @@ export const projects = [
     title: "SiliconAgent.ai",
     description: "Founded an AI-powered platform for legacy enterprise system modernization — Java upgrades, framework migrations (Struts→Spring Boot, JSP→React), API transformation, and database migration. Designed a 6-stage pipeline alternating Language Server Protocol (LSP) analysis with multi-model AI orchestration (Claude, GPT-4o, Gemini, Llama) for compiler-level validation, directly targeting the hallucinated APIs and broken type contracts that plague pure AI-only migration. Up to 60% cost reduction versus manual, with zero-downtime deployment and automated rollback.",
     tech: ["Python", "LLMs", "LSP", "Multi-Agent", "AI"],
-    period: "Jan 2025 – Mar 2026",
+    period: "Jan 2026 – Mar 2026",
     github: null,
     live: "https://siliconagent.ai",
     featured: true
   },
   {
     title: "FinRAG",
-    description: "A retrieval-augmented QA system for financial documents built on the FinQA dataset (86K+ chunks across 10K+ filing pages). Combines BM25 keyword search with dense vector retrieval, with a fusion-weight dev sweep that improved Recall@3 from 70.3% (BM25 only) to 74.7% (hybrid). Extending into prompt-based generation and hallucination detection using an LLM-as-a-judge approach that flags unsupported claims in generated answers.",
+    description: "A retrieval-augmented QA system for financial documents built on the FinQA dataset (86K+ chunks across 10K+ filing pages), using Groq for inference and Weaviate for vector retrieval. A hybrid BM25 + dense retrieval pipeline improved Recall@3 from 70.3% (BM25 only) to 74.7% (hybrid) via fusion-weight tuning. Led the hallucination-detection module — an LLM-as-a-judge verifier — with citation-grounded, few-shot/CoT prompt design to flag unsupported claims in generated answers.",
     tech: ["Python", "RAG", "Groq", "Weaviate", "LLM-as-a-Judge"],
-    period: "Jul 2026 – Present",
+    period: "Jul 2026 – Aug 2026",
     github: null,
     live: null
   },
   {
     title: "MIRA",
-    description: "An AI mock interview platform where users upload a resume and job description, then practice through real-time voice interviews with AI-generated questions and follow-ups, and receive structured performance feedback. Calls route through a custom Gemini/Groq multi-model gateway with retry, token management, and latency/cost logging. Built on Next.js 15 + Supabase (row-level security on every table, encrypted API keys) with a 9-state session orchestration flow and an 11-stage CI/CD pipeline.",
+    description: "An AI mock interview platform where users upload a resume and job description, then practice through real-time voice interviews with AI-generated questions and follow-ups, and receive structured performance feedback. Calls route through a custom Gemini/Groq multi-model gateway with retry, token management, and latency/cost logging. Built on Next.js 15 + Supabase (row-level security on every table, encrypted API keys), orchestrated via a stateful 9-state agentic session engine, with an 11-stage CI/CD pipeline.",
     tech: ["Next.js", "Supabase", "PostgreSQL", "Gemini", "Groq"],
     period: "Jan 2026 – Apr 2026",
     github: null,
@@ -108,7 +108,7 @@ export const projects = [
   },
   {
     title: "Codie",
-    description: "An open-source Claude Code plugin that teaches data structures and algorithms through Socratic coaching — guiding users toward solutions with targeted questions instead of giving answers away. Integrates directly into a developer's Claude Code workflow, turning everyday coding practice into structured learning. Adopted by 100+ users.",
+    description: "An open-source Claude Code plugin that teaches data structures and algorithms through Socratic coaching — guiding users toward solutions with targeted questions instead of giving answers away. Integrates directly into a developer's Claude Code workflow, turning everyday coding practice into structured learning. Adopted by 100+ users — direct hands-on experience building and extending coding-agent tooling.",
     tech: ["Prompt Engineering", "Claude Code", "Algorithms", "TypeScript"],
     period: "Jun 2026",
     github: "https://github.com/jayasriharshitakoneti/codie-plugin",

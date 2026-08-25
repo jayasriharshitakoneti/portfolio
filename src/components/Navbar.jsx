@@ -7,11 +7,11 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [theme, setTheme] = useState(() => {
-    // Check localStorage first, then system preference, default to light
-    const saved = localStorage.getItem('theme');
-    if (saved) return saved;
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) return 'dark';
-    return 'light';
+    // Saved choice wins; otherwise default to light (no system-preference
+    // check). Fresh key so stale auto-saved values from the old dark
+    // default are ignored.
+    const saved = localStorage.getItem('portfolio-theme');
+    return saved || 'light';
   });
 
   const navigate = useNavigate();
@@ -28,7 +28,7 @@ const Navbar = () => {
   useEffect(() => {
     // Apply theme to document
     document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
+    localStorage.setItem('portfolio-theme', theme);
   }, [theme]);
 
   const toggleTheme = () => {

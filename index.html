@@ -14,10 +14,12 @@
   </head>
   <body>
     <script>
-      // Prevent theme flash on page load
+      // Prevent theme flash on page load.
+      // Light is the unconditional default. 'portfolio-theme' is a fresh key:
+      // values auto-saved under the old 'theme' key (from the old dark
+      // default) are ignored. Dark mode remains one toggle away.
       (function() {
-        const theme = localStorage.getItem('theme') ||
-          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        var theme = localStorage.getItem('portfolio-theme') || 'light';
         document.documentElement.setAttribute('data-theme', theme);
       })();
     </script>
